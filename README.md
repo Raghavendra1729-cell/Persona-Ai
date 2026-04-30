@@ -47,7 +47,6 @@ Deployed backend URL: https://persona-ai-k8fx.onrender.com/
 
 ## Screenshots
 
-Add screenshots here before submission:
 
 <img width="1693" height="955" alt="Screenshot 2026-04-30 at 12 00 13 PM" src="https://github.com/user-attachments/assets/1cd5a798-db3f-4b70-b7be-69ed67aef2c1" />
 
