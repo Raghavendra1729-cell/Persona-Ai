@@ -18,7 +18,7 @@ app = FastAPI(title="Scaler Persona Bot")
 def get_allowed_origins() -> List[str]:
     default_origin = "http://localhost:5173"
     raw_origins = os.environ.get("FRONT_END_URL", default_origin)
-    origins = [origin.strip() for origin in raw_origins.split(",") if origin.strip()]
+    origins = [origin.strip().rstrip("/") for origin in raw_origins.split(",") if origin.strip()]
 
     if default_origin not in origins:
         origins.append(default_origin)

@@ -101,9 +101,11 @@ function App() {
       }
 
       const messageText =
-        caughtError instanceof Error
-          ? caughtError.message
-          : 'Unable to complete your request right now.'
+        caughtError instanceof TypeError
+          ? 'Unable to reach the backend right now. Check the deployed API URL and backend CORS settings.'
+          : caughtError instanceof Error
+            ? caughtError.message
+            : 'Unable to complete your request right now.'
 
       setError(messageText)
       setMessages((current) => [

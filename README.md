@@ -42,8 +42,8 @@ npm run dev
 
 ## Deployment
 
-Deployed frontend URL: add after deployment  
-Deployed backend URL: add after deployment
+Deployed frontend URL: https://persona-ai-alpha-roan.vercel.app/  
+Deployed backend URL: https://persona-ai-k8fx.onrender.com/
 
 ## Screenshots
 
