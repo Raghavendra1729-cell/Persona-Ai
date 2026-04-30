@@ -1,4 +1,4 @@
-import type { FormEvent } from 'react'
+import type { FormEvent, KeyboardEvent } from 'react'
 
 type ChatInputProps = {
   disabled: boolean
@@ -13,6 +13,13 @@ function ChatInput({ disabled, onInputChange, onSend, value }: ChatInputProps) {
     onSend(value)
   }
 
+  const handleKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault()
+      onSend(value)
+    }
+  }
+
   return (
     <form className="mt-4 flex items-end gap-3" onSubmit={handleSubmit}>
       <label className="sr-only" htmlFor="chat-message">
@@ -23,6 +30,7 @@ function ChatInput({ disabled, onInputChange, onSend, value }: ChatInputProps) {
         className="min-h-14 flex-1 resize-none rounded-[1.5rem] border border-white/10 bg-black/25 px-4 py-4 text-sm text-slate-100 shadow-inner shadow-black/30 outline-none transition placeholder:text-slate-500 focus:border-sky-400/60 focus:bg-slate-950/80 focus:ring-4 focus:ring-sky-400/10 disabled:cursor-not-allowed disabled:opacity-60"
         disabled={disabled}
         onChange={(event) => onInputChange(event.target.value)}
+        onKeyDown={handleKeyDown}
         placeholder="Ask about DSA, interviews, consistency, or system design..."
         rows={1}
         value={value}

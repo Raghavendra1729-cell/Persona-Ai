@@ -40,19 +40,6 @@ cp .env.example .env
 npm run dev
 ```
 
-Frontend environment variable:
-
-```bash
-VITE_API_URL=http://localhost:8000
-```
-
-## Project files for submission
-
-- `prompts.md` contains the three persona prompts and short notes on how they were designed
-- `reflection.md` contains the reflection write-up
-- `persona ai backend/.env.example` documents backend env variables
-- `persona ai frontend/.env.example` documents frontend env variables
-
 ## Deployment
 
 Deployed frontend URL: add after deployment  
